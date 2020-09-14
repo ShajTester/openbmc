@@ -38,4 +38,4 @@ add_watchdog_confs() {
 
 }
 
-ROOTFS_POSTINSTALL_COMMAND += "add_watchdog_confs"
+# ROOTFS_POSTINSTALL_COMMAND += "add_watchdog_confs"
