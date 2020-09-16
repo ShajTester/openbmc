@@ -8,6 +8,7 @@ do_compile_prepend(){
 SRC_URI += " \
         file://intel.cfg \
         file://0001-arm-dts-add-DTS-for-Intel-ast2500-platforms.patch \
+        file://0001-arm-dts-intel-s2600wf-dts-fixups.patch \
         file://0001-arm-dts-add-DTS-for-Intel-ast2600-platforms.patch \
         file://0001-arm-dts-base-aspeed-g6-dtsi-fixups.patch \
         file://0002-Enable-pass-through-on-GPIOE1-and-GPIOE3-free.patch \
@@ -85,7 +86,8 @@ SRC_URI += " \
         file://0116-watchdog-aspeed-fix-AST2600-support.patch \
         file://0117-Copy-raw-PECI-response-to-user-space-on-timeout.patch \
 		file://0120-Enable-xdma-for-Intel-WHT-Rikor-Scalable.patch \
-		"
+        file://0118-Recalculate-AW-FCS-on-WrEndPointConfig-command.patch \
+        "
 
 SRC_URI += "${@bb.utils.contains('IMAGE_FSTYPES', 'intel-pfr', 'file://0005-128MB-flashmap-for-PFR.patch', '', d)}"
 SRC_URI += "${@bb.utils.contains('EXTRA_IMAGE_FEATURES', 'debug-tweaks', 'file://debug.cfg', '', d)}"
