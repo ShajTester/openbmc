@@ -1,0 +1,21 @@
+From a737083c47b35f3a288b365d7d1d08f2d3de6474 Mon Sep 17 00:00:00 2001
+From: ShajTester <kolobrod2002@yandex.ru>
+Date: Wed, 16 Sep 2020 11:13:24 +0300
+Subject: [PATCH] Enable xdma for Intel/WHT (Rikor-Scalable)
+
+---
+ arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts b/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts
+index fe2dafc53ae2..ef87d5370995 100644
+--- a/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts
++++ b/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts
+@@ -479,3 +479,7 @@
+ &vhub {
+ 	status = "okay";
+ };
++
++&xdma {
++	status = "okay";
++};

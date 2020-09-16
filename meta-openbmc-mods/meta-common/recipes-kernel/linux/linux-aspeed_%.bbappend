@@ -84,7 +84,8 @@ SRC_URI += " \
         file://0112-AST2600-enable-UART-routing.patch \
         file://0116-watchdog-aspeed-fix-AST2600-support.patch \
         file://0117-Copy-raw-PECI-response-to-user-space-on-timeout.patch \
-        "
+		file://0120-Enable-xdma-for-Intel-WHT-Rikor-Scalable.patch \
+		"
 
 SRC_URI += "${@bb.utils.contains('IMAGE_FSTYPES', 'intel-pfr', 'file://0005-128MB-flashmap-for-PFR.patch', '', d)}"
 SRC_URI += "${@bb.utils.contains('EXTRA_IMAGE_FEATURES', 'debug-tweaks', 'file://debug.cfg', '', d)}"
