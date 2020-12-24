@@ -1,0 +1,64 @@
+From 448c941bea88043759cef99f1775c0423330cb3c Mon Sep 17 00:00:00 2001
+From: ShajTester <andrey-shaj@ya.ru>
+Date: Thu, 24 Dec 2020 17:23:07 +0300
+Subject: [PATCH] Flash layout Rikor 32MB
+
+---
+ arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts     |  2 +-
+ .../boot/dts/openbmc-flash-layout-intel-32MB.dtsi  | 34 ++++++++++++++++++++++
+ 2 files changed, 35 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm/boot/dts/openbmc-flash-layout-intel-32MB.dtsi
+
+diff --git a/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts b/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts
+index ef87d53..f702491 100644
+--- a/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts
++++ b/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts
+@@ -96,7 +96,7 @@
+ 	flash@0 {
+ 		status = "okay";
+ 		m25p,fast-read;
+-#include "openbmc-flash-layout-intel-64MB.dtsi"
++#include "openbmc-flash-layout-intel-32MB.dtsi"
+ 	};
+ };
+ 
+diff --git a/arch/arm/boot/dts/openbmc-flash-layout-intel-32MB.dtsi b/arch/arm/boot/dts/openbmc-flash-layout-intel-32MB.dtsi
+new file mode 100644
+index 0000000..b456b4d
+--- /dev/null
++++ b/arch/arm/boot/dts/openbmc-flash-layout-intel-32MB.dtsi
+@@ -0,0 +1,34 @@
++// SPDX-License-Identifier: GPL-2.0+
++// 64MB flash layout: redundant image with common RW partition
++
++partitions {
++	compatible = "fixed-partitions";
++	#address-cells = <1>;
++	#size-cells = <1>;
++
++	u-boot@0 {
++		reg = <0x0 0x60000>;
++		label = "u-boot";
++	};
++
++	u-boot-env@60000 {
++		reg = <0x60000 0x20000>;
++		label = "u-boot-env";
++	};
++
++	fit-image-a@80000 {
++		reg = <0x80000 0x1780000>;
++		label = "image-a";
++	};
++
++	sofs@1c00000 {
++		reg = <0x1800000 0x200000>;
++		label = "sofs";
++	};
++
++	rwfs@1e00000 {
++		reg = <0x1a00000 0x600000>;
++		label = "rwfs";
++	};
++
++};
