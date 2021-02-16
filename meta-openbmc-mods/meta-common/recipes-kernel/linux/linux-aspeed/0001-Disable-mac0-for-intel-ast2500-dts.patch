@@ -1,0 +1,36 @@
+From 8d9555c97c044f3661a830c5cd47741d443760d8 Mon Sep 17 00:00:00 2001
+From: ShajTester <andrey-shaj@ya.ru>
+Date: Tue, 16 Feb 2021 14:31:22 +0300
+Subject: [PATCH] Disable mac0 for intel-ast2500 dts
+
+---
+ arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+
+diff --git a/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts b/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts
+index f702491..fec218f 100644
+--- a/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts
++++ b/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts
+@@ -317,13 +317,16 @@
+ 	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
+ };
+ 
+-&mac0 {
+-	status = "okay";
+-	use-ncsi;
++/*
++ * &mac0 {
++ * 	status = "okay";
++ * 	use-ncsi;
++ * 
++ * 	pinctrl-names = "default";
++ * 	pinctrl-0 = <&pinctrl_rmii1_default>;
++ * };
++ */
+ 
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&pinctrl_rmii1_default>;
+-};
+ 
+ &i2c0 {
+ 	multi-master;
