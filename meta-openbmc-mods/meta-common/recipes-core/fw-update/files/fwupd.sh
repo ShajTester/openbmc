@@ -255,11 +255,12 @@ ping_pong_update() {
     # guess based on fw_env which partition we booted from
     local BOOTADDR=$(fw_printenv bootcmd | awk '{print $2}')
     local TGT="/dev/mtd/image-a"
-    case "$BOOTADDR" in
-        20080000) TGT="/dev/mtd/image-b"; BOOTADDR="22480000" ;;
-        22480000) TGT="/dev/mtd/image-a"; BOOTADDR="20080000" ;;
-        *)        TGT="/dev/mtd/image-a"; BOOTADDR="20080000" ;;
-    esac
+    #case "$BOOTADDR" in
+    #    20080000) TGT="/dev/mtd/image-b"; BOOTADDR="22480000" ;;
+    #    22480000) TGT="/dev/mtd/image-a"; BOOTADDR="20080000" ;;
+    #    *)        TGT="/dev/mtd/image-a"; BOOTADDR="20080000" ;;
+    #esac
+    TGT="/dev/mtd/image-a"; BOOTADDR="20080000" ;
     log "Updating $(basename $TGT) (use bootm $BOOTADDR)"
     flash_erase $TGT 0 0
     log "Writing $(stat -c "%s" "$LOCAL_PATH") bytes"
