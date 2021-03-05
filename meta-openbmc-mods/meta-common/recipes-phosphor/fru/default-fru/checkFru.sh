@@ -41,7 +41,7 @@ if grep -q 'CPU part\s*: 0xb76' /proc/cpuinfo; then
             PRODID="0x98";;
         62) NAME="WilsonPoint"
             PRODID="0x9a";;
-        *)  NAME="S2600WFT"
+        *)  NAME="ScalableEATX"
             PRODID="0x7b";;
     esac
 

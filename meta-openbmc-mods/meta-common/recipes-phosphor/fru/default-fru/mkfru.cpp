@@ -26,7 +26,8 @@
 
 constexpr uint8_t fillChar = '.';
 constexpr uint8_t eof = 0xc1;
-const std::string intel = "Intel Corporation";
+//const std::string intel = "Intel Corporation";
+const std::string intel = "Rikor";
 
 // round up to nearest block size (power of 2)
 constexpr size_t blockRound(size_t len, size_t blk)
