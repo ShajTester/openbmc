@@ -31,6 +31,8 @@ SRC_URI += "file://telemetry/0001-Redfish-TelemetryService-schema-implementation
             file://telemetry/0006-Fix-MetricReport-timestamp-for-EventService.patch \
 "
 
+SRC_URI += "file://0015-Log-entities-desabled.patch"
+
 # Temporary fix: Move it to service file
 do_install_append() {
         install -d ${D}/var/lib/bmcweb
