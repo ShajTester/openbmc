@@ -1,4 +1,4 @@
-From 8d9555c97c044f3661a830c5cd47741d443760d8 Mon Sep 17 00:00:00 2001
+From 0800d6662941d73426b7a0dfcd7c5c74d802e8d7 Mon Sep 17 00:00:00 2001
 From: ShajTester <andrey-shaj@ya.ru>
 Date: Tue, 16 Feb 2021 14:31:22 +0300
 Subject: [PATCH] Disable mac0 for intel-ast2500 dts

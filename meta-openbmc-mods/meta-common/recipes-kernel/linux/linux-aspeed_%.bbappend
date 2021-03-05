@@ -87,8 +87,6 @@ SRC_URI += " \
         file://0117-Copy-raw-PECI-response-to-user-space-on-timeout.patch \
 		file://0120-Enable-xdma-for-Intel-WHT-Rikor-Scalable.patch \
         file://0118-Recalculate-AW-FCS-on-WrEndPointConfig-command.patch \
-        file://0081-Flash-layout-Rikor-32MB.patch \
-        file://0001-Disable-mac0-for-intel-ast2500-dts.patch \
 		"
 
 SRC_URI += "${@bb.utils.contains('IMAGE_FSTYPES', 'intel-pfr', 'file://0005-128MB-flashmap-for-PFR.patch', '', d)}"

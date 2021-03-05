@@ -1,0 +1,29 @@
+From 33e7570f6d2d4d232404602a70246b0f37de3bb7 Mon Sep 17 00:00:00 2001
+From: ShajTester <andrey-shaj@ya.ru>
+Date: Fri, 5 Mar 2021 11:20:01 +0300
+Subject: [PATCH] Disable kcs in dts
+
+---
+ arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts b/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts
+index fec218f..c002844 100644
+--- a/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts
++++ b/arch/arm/boot/dts/aspeed-bmc-intel-ast2500.dts
+@@ -220,6 +220,7 @@
+ 	/*IJ0-IJ7*/	"","","","","","","","";
+ };
+ 
++/*
+ &kcs3 {
+ 	kcs_addr = <0xCA2>;
+ 	status = "okay";
+@@ -229,6 +230,7 @@
+ 	kcs_addr = <0xCA4>;
+ 	status = "okay";
+ };
++*/
+ 
+ &sio_regs {
+ 	status = "okay";
