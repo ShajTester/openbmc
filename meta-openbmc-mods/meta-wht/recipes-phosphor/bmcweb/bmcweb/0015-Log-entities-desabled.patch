@@ -1,0 +1,27 @@
+From a19f40752c5dca277941452dd7b9b5c8424c66b3 Mon Sep 17 00:00:00 2001
+From: ShajTester <andrey-shaj@ya.ru>
+Date: Fri, 5 Mar 2021 11:13:23 +0300
+Subject: [PATCH] Log entities desabled
+
+---
+ redfish-core/lib/log_services.hpp | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/redfish-core/lib/log_services.hpp b/redfish-core/lib/log_services.hpp
+index 590243c..e552f0d 100644
+--- a/redfish-core/lib/log_services.hpp
++++ b/redfish-core/lib/log_services.hpp
+@@ -1162,6 +1162,13 @@ static int fillEventLogEntryJson(const std::string& logEntryID,
+         severity = message->severity;
+     }
+ 
++    if(severity.compare(std::string{"Critical"}) == 0)
++        return 0;
++    std::string rikor_str = messageID.substr(messageID.rfind(".")+1);
++    if(std::string{"ServiceFailure"}.compare(rikor_str) == 0)
++        return 0;
++
++
+     // Get the MessageArgs from the log if there are any
+     boost::beast::span<std::string> messageArgs;
+     if (logEntryFields.size() > 1)
