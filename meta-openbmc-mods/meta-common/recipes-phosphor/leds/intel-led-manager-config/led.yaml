@@ -20,15 +20,13 @@ status_non_critical:
     status_green:
         Action: 'Off'
     status_amber:
-        Action: 'Blink'
-        DutyOn: 50
-        Period: 1000
+        Action: 'Off'
 
 status_critical:
     status_green:
         Action: 'Off'
     status_amber:
-        Action: 'On'
+        Action: 'Off'
 
 enclosure_identify:
     identify:
