@@ -26,8 +26,7 @@
 
 constexpr uint8_t fillChar = '.';
 constexpr uint8_t eof = 0xc1;
-//const std::string intel = "Intel Corporation";
-const std::string intel = "Rikor";
+const std::string manufacturer = "Rikor";
 
 // round up to nearest block size (power of 2)
 constexpr size_t blockRound(size_t len, size_t blk)
@@ -117,7 +116,7 @@ std::vector<uint8_t> genBoardContents(const std::string& name)
     constexpr size_t snSize = 12;
     constexpr size_t pnSize = 10;
     const std::string version = "FRU Ver 0.01";
-    size_t contentSize = headerSize + 1 + name.size() + 1 + intel.size() + 1 +
+    size_t contentSize = headerSize + 1 + name.size() + 1 + manufacturer.size() + 1 +
                          snSize + 1 + pnSize + 1 + version.size() + sizeof(eof);
     std::vector<uint8_t> data(contentSize);
     size_t offset = 0;
@@ -127,7 +126,7 @@ std::vector<uint8_t> genBoardContents(const std::string& name)
     data[offset++] = 0; // mfg date/time
     data[offset++] = 0; // mfg date/time
     // manufacturer name
-    offset += fillStr(data.begin() + offset, intel);
+    offset += fillStr(data.begin() + offset, manufacturer);
     // product name
     offset += fillStr(data.begin() + offset, name);
     // board sn
@@ -150,7 +149,7 @@ std::vector<uint8_t> genProductContents(const std::string& name)
     constexpr size_t atSize = 20;
     constexpr size_t idSize = 0;
     const std::string version = "FRU Ver 0.01";
-    size_t contentSize = headerSize + 1 + intel.size() + 1 + name.size() + 1 +
+    size_t contentSize = headerSize + 1 + manufacturer.size() + 1 + name.size() + 1 +
                          pnSize + 1 + pvSize + 1 + snSize + 1 + atSize + 1 +
                          idSize + sizeof(eof);
     std::vector<uint8_t> data(contentSize);
@@ -158,7 +157,7 @@ std::vector<uint8_t> genProductContents(const std::string& name)
     // chassis type (main server chassis)
     data[offset++] = 0; // language code
     // manufacturer name
-    offset += fillStr(data.begin() + offset, intel);
+    offset += fillStr(data.begin() + offset, manufacturer);
     // product name
     offset += fillStr(data.begin() + offset, name);
     // product part number
