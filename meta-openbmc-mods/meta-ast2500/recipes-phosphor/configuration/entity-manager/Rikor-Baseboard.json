@@ -1,0 +1,1447 @@
+{
+    "Exposes": [
+        {
+            "Index": 3,
+            "Name": "P105_PCH_AUX",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.139
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 1.106
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 0.995
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0.966
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 5,
+            "Name": "P12V_AUX",
+            "ScaleFactor": 0.1124,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 13.494
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 13.101
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 10.945
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 10.616
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 6,
+            "Name": "P1V8_PCH",
+            "ScaleFactor": 0.7505,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.961
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 1.904
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 1.699
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1.648
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 1,
+            "Name": "P3V3",
+            "PowerState": "On",
+            "ScaleFactor": 0.4107,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 3.647
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 3.541
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 3.066
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 2.974
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "CPURequired": 1,
+            "Index": 8,
+            "Name": "PVCCIN_CPU1",
+            "PowerState": "On",
+            "ScaleFactor": 0.7505,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 2.151
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 2.088
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 1.418
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1.376
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "CPURequired": 2,
+            "Index": 9,
+            "Name": "PVCCIN_CPU2",
+            "PowerState": "On",
+            "ScaleFactor": 0.7505,
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 2.151
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 2.088
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 1.418
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1.376
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "CPURequired": 1,
+            "Index": 14,
+            "Name": "PVCCIO_CPU1",
+            "PowerState": "On",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.19
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 1.155
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 0.752
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0.729
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "CPURequired": 2,
+            "Index": 15,
+            "Name": "PVCCIO_CPU2",
+            "PowerState": "On",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.19
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 1.155
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 0.752
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0.729
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "CPURequired": 1,
+            "Index": 10,
+            "Name": "PVDQ_ABC_CPU1",
+            "PowerState": "On",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.301
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 1.263
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 1.138
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1.104
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "CPURequired": 2,
+            "Index": 12,
+            "Name": "PVDQ_ABC_CPU2",
+            "PowerState": "On",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.301
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 1.263
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 1.138
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1.104
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "CPURequired": 1,
+            "Index": 11,
+            "Name": "PVDQ_DEF_CPU1",
+            "PowerState": "On",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.301
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 1.263
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 1.138
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1.104
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "CPURequired": 2,
+            "Index": 13,
+            "Name": "PVDQ_DEF_CPU2",
+            "PowerState": "On",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.301
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 1.263
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 1.138
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 1.104
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "Index": 2,
+            "Name": "PVNN_PCH_AUX",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 1.081
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 1.049
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 0.807
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0.783
+                }
+            ],
+            "Type": "ADC"
+        },
+        {
+            "C1": 92.16,
+            "C2": 107.52,
+            "MaxCFM": 17.5,
+            "Name": "System Airflow",
+            "TachMaxPercent": 100,
+            "TachMinPercent": 20,
+            "Tachs": [
+                "Fan 1a",
+                "Fan 1b",
+                "Fan 2a",
+                "Fan 2b",
+                "Fan 3a",
+                "Fan 3b",
+                "Fan 4a",
+                "Fan 4b",
+                "Fan 5a",
+                "Fan 5b",
+                "Fan 6a",
+                "Fan 6b",
+                "Fan 7a",
+                "Fan 7b",
+                "Fan 8a",
+                "Fan 8b"
+            ],
+            "Type": "CFMSensor"
+        },
+        {
+            "Pmem": [
+                {
+                    "Channel": 0,
+                    "DeviceID": 1,
+                    "I2cAddress": "0xB0",
+                    "I2cbus": "MemoryChannel1",
+                    "Imc": 0,
+                    "Pecibus": "0x30",
+                    "Slot": 0,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 2,
+                    "I2cAddress": "0xB2",
+                    "I2cbus": "MemoryChannel1",
+                    "Imc": 0,
+                    "Pecibus": "0x30",
+                    "Slot": 1,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 3,
+                    "I2cAddress": "0xB4",
+                    "I2cbus": "MemoryChannel1",
+                    "Imc": 0,
+                    "Pecibus": "0x30",
+                    "Slot": 0,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 4,
+                    "I2cAddress": "0xB6",
+                    "I2cbus": "MemoryChannel1",
+                    "Imc": 0,
+                    "Pecibus": "0x30",
+                    "Slot": 1,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 5,
+                    "I2cAddress": "0xB8",
+                    "I2cbus": "MemoryChannel1",
+                    "Imc": 1,
+                    "Pecibus": "0x30",
+                    "Slot": 0,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 6,
+                    "I2cAddress": "0xBA",
+                    "I2cbus": "MemoryChannel1",
+                    "Imc": 1,
+                    "Pecibus": "0x30",
+                    "Slot": 1,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 7,
+                    "I2cAddress": "0xBC",
+                    "I2cbus": "MemoryChannel1",
+                    "Imc": 1,
+                    "Pecibus": "0x30",
+                    "Slot": 0,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 8,
+                    "I2cAddress": "0xBE",
+                    "I2cbus": "MemoryChannel1",
+                    "Imc": 1,
+                    "Pecibus": "0x30",
+                    "Slot": 1,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 9,
+                    "I2cAddress": "0xB0",
+                    "I2cbus": "MemoryChannel2",
+                    "Imc": 2,
+                    "Pecibus": "0x30",
+                    "Slot": 0,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 10,
+                    "I2cAddress": "0xB2",
+                    "I2cbus": "MemoryChannel2",
+                    "Imc": 2,
+                    "Pecibus": "0x30",
+                    "Slot": 1,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 11,
+                    "I2cAddress": "0xB4",
+                    "I2cbus": "MemoryChannel2",
+                    "Imc": 2,
+                    "Pecibus": "0x30",
+                    "Slot": 0,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 12,
+                    "I2cAddress": "0xB6",
+                    "I2cbus": "MemoryChannel2",
+                    "Imc": 2,
+                    "Pecibus": "0x30",
+                    "Slot": 1,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 13,
+                    "I2cAddress": "0xB8",
+                    "I2cbus": "MemoryChannel2",
+                    "Imc": 3,
+                    "Pecibus": "0x30",
+                    "Slot": 0,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 14,
+                    "I2cAddress": "0xBA",
+                    "I2cbus": "MemoryChannel2",
+                    "Imc": 3,
+                    "Pecibus": "0x30",
+                    "Slot": 1,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 15,
+                    "I2cAddress": "0xBC",
+                    "I2cbus": "MemoryChannel2",
+                    "Imc": 3,
+                    "Pecibus": "0x30",
+                    "Slot": 0,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 16,
+                    "I2cAddress": "0xBE",
+                    "I2cbus": "MemoryChannel2",
+                    "Imc": 3,
+                    "Pecibus": "0x30",
+                    "Slot": 1,
+                    "Socket": 0,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 17,
+                    "I2cAddress": "0xB0",
+                    "I2cbus": "MemoryChannel3",
+                    "Imc": 0,
+                    "Pecibus": "0x31",
+                    "Slot": 0,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 18,
+                    "I2cAddress": "0xB2",
+                    "I2cbus": "MemoryChannel3",
+                    "Imc": 0,
+                    "Pecibus": "0x31",
+                    "Slot": 1,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 19,
+                    "I2cAddress": "0xB4",
+                    "I2cbus": "MemoryChannel3",
+                    "Imc": 0,
+                    "Pecibus": "0x31",
+                    "Slot": 0,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 20,
+                    "I2cAddress": "0xB6",
+                    "I2cbus": "MemoryChannel3",
+                    "Imc": 0,
+                    "Pecibus": "0x31",
+                    "Slot": 1,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 21,
+                    "I2cAddress": "0xB8",
+                    "I2cbus": "MemoryChannel3",
+                    "Imc": 1,
+                    "Pecibus": "0x31",
+                    "Slot": 0,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 22,
+                    "I2cAddress": "0xBA",
+                    "I2cbus": "MemoryChannel3",
+                    "Imc": 1,
+                    "Pecibus": "0x31",
+                    "Slot": 1,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 23,
+                    "I2cAddress": "0xBC",
+                    "I2cbus": "MemoryChannel3",
+                    "Imc": 1,
+                    "Pecibus": "0x31",
+                    "Slot": 0,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 24,
+                    "I2cAddress": "0xBE",
+                    "I2cbus": "MemoryChannel3",
+                    "Imc": 1,
+                    "Pecibus": "0x31",
+                    "Slot": 1,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 0,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 25,
+                    "I2cAddress": "0xB0",
+                    "I2cbus": "MemoryChannel4",
+                    "Imc": 2,
+                    "Pecibus": "0x31",
+                    "Slot": 0,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 26,
+                    "I2cAddress": "0xB2",
+                    "I2cbus": "MemoryChannel4",
+                    "Imc": 2,
+                    "Pecibus": "0x31",
+                    "Slot": 1,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 27,
+                    "I2cAddress": "0xB4",
+                    "I2cbus": "MemoryChannel4",
+                    "Imc": 2,
+                    "Pecibus": "0x31",
+                    "Slot": 0,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 28,
+                    "I2cAddress": "0xB6",
+                    "I2cbus": "MemoryChannel4",
+                    "Imc": 2,
+                    "Pecibus": "0x31",
+                    "Slot": 1,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 29,
+                    "I2cAddress": "0xB8",
+                    "I2cbus": "MemoryChannel4",
+                    "Imc": 3,
+                    "Pecibus": "0x31",
+                    "Slot": 0,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 0,
+                    "DeviceID": 30,
+                    "I2cAddress": "0xBA",
+                    "I2cbus": "MemoryChannel4",
+                    "Imc": 3,
+                    "Pecibus": "0x31",
+                    "Slot": 1,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 31,
+                    "I2cAddress": "0xBC",
+                    "I2cbus": "MemoryChannel4",
+                    "Imc": 3,
+                    "Pecibus": "0x31",
+                    "Slot": 0,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                },
+                {
+                    "Channel": 1,
+                    "DeviceID": 32,
+                    "I2cAddress": "0xBE",
+                    "I2cbus": "MemoryChannel4",
+                    "Imc": 3,
+                    "Pecibus": "0x31",
+                    "Slot": 1,
+                    "Socket": 1,
+                    "Spdpcibus": "0x7E",
+                    "Spdpcicmdregister": "0x80",
+                    "Spdpcidataregister": "0x88",
+                    "Spdpcidevice": 11,
+                    "Spdpcifunction": 1,
+                    "Spdpcistatusregister": "0x84"
+                }
+            ],
+            "Interface": [
+                "i2c",
+                "peci"
+            ],
+            "Name": "PMEM",
+            "Type": "PMEM"
+        },
+        {
+            "Name": "System Fan connector 1",
+            "Pwm": 0,
+            "Tachs": [
+                0,
+                1
+            ],
+            "Type": "IntelFanConnector"
+        },
+        {
+            "Name": "System Fan connector 2",
+            "Pwm": 1,
+            "Tachs": [
+                2,
+                3
+            ],
+            "Type": "IntelFanConnector"
+        },
+        {
+            "Name": "System Fan connector 3",
+            "Pwm": 2,
+            "Tachs": [
+                4,
+                5
+            ],
+            "Type": "IntelFanConnector"
+        },
+        {
+            "Name": "System Fan connector 4",
+            "Pwm": 3,
+            "Tachs": [
+                6,
+                7
+            ],
+            "Type": "IntelFanConnector"
+        },
+        {
+            "Name": "System Fan connector 5",
+            "Pwm": 4,
+            "Tachs": [
+                8,
+                9
+            ],
+            "Type": "IntelFanConnector"
+        },
+        {
+            "Name": "System Fan connector 6",
+            "Pwm": 5,
+            "Tachs": [
+                10,
+                11
+            ],
+            "Type": "IntelFanConnector"
+        },
+        {
+            "Name": "System Fan connector 7",
+            "Pwm": 6,
+            "Tachs": [
+                12,
+                13
+            ],
+            "Type": "IntelFanConnector"
+        },
+        {
+            "Name": "System Fan connector 8",
+            "Pwm": 7,
+            "Tachs": [
+                14,
+                15
+            ],
+            "Type": "IntelFanConnector"
+        },
+        {
+            "Address": "0x8",
+            "Class": "METemp",
+            "Name": "SSB Temp",
+            "PowerState": "BiosPost",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 103
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 98
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 5
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                }
+            ],
+            "Type": "IpmbSensor"
+        },
+        {
+            "Address": "0xC4",
+            "Class": "MpsBridgeTemp",
+            "Name": "CPU1 P12V PVCCIN VR Temp",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 115
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 110
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 5
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                }
+            ],
+            "Type": "IpmbSensor"
+        },
+        {
+            "Address": "0xB4",
+            "Class": "PxeBridgeTemp",
+            "Name": "CPU1 P12V PVCCIO VR Temp",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 115
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 110
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 5
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                }
+            ],
+            "Type": "IpmbSensor"
+        },
+        {
+            "Address": "0xDC",
+            "Class": "PxeBridgeTemp",
+            "Name": "CPU1 VR Mem ABCD Temp",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 115
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 110
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 5
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                }
+            ],
+            "Type": "IpmbSensor"
+        },
+        {
+            "Address": "0xDC",
+            "Class": "PxeBridgeTemp",
+            "Name": "CPU1 VR Mem EFGH Temp",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 115
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 110
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 5
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                }
+            ],
+            "Type": "IpmbSensor"
+        },
+        {
+            "Address": "0x4A",
+            "Class": "IRBridgeTemp",
+            "Name": "CPU1 VR P1V8",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 115
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 110
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 5
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                }
+            ],
+            "Type": "IpmbSensor"
+        },
+        {
+            "Address": "0xCC",
+            "Class": "MpsBridgeTemp",
+            "Name": "CPU2 P12V PVCCIN VR Temp",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 115
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 110
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 5
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                }
+            ],
+            "Type": "IpmbSensor"
+        },
+        {
+            "Address": "0xD4",
+            "Class": "PxeBridgeTemp",
+            "Name": "CPU2 P12V PVCCIO VR Temp",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 115
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 110
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 5
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                }
+            ],
+            "Type": "IpmbSensor"
+        },
+        {
+            "Address": "0xB0",
+            "Class": "PxeBridgeTemp",
+            "Name": "CPU2 VR Mem ABCD Temp",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 115
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 110
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 5
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                }
+            ],
+            "Type": "IpmbSensor"
+        },
+        {
+            "Address": "0xEC",
+            "Class": "PxeBridgeTemp",
+            "Name": "CPU2 VR Mem EFGH Temp",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 115
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 110
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 5
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                }
+            ],
+            "Type": "IpmbSensor"
+        },
+        {
+            "Address": "0x4C",
+            "Class": "IRBridgeTemp",
+            "Name": "CPU2 VR P1V8",
+            "Thresholds": [
+                {
+                    "Direction": "greater than",
+                    "Name": "upper critical",
+                    "Severity": 1,
+                    "Value": 115
+                },
+                {
+                    "Direction": "greater than",
+                    "Name": "upper non critical",
+                    "Severity": 0,
+                    "Value": 110
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower non critical",
+                    "Severity": 0,
+                    "Value": 5
+                },
+                {
+                    "Direction": "less than",
+                    "Name": "lower critical",
+                    "Severity": 1,
+                    "Value": 0
+                }
+            ],
+            "Type": "IpmbSensor"
+        },
+        {
+            "Address": "0x30",
+            "Bus": 0,
+            "CpuID": 1,
+            "Name": "CPU 1",
+            "PresenceGpio": [
+                {
+                    "Name": "CPU1_PRESENCE",
+                    "Polarity": "Low"
+                }
+            ],
+            "Type": "XeonCPU"
+        },
+        {
+            "Address": "0x31",
+            "Bus": 0,
+            "CpuID": 2,
+            "Name": "CPU 2",
+            "PresenceGpio": [
+                {
+                    "Name": "CPU2_PRESENCE",
+                    "Polarity": "Low"
+                }
+            ],
+            "Type": "XeonCPU"
+        }
+    ],
+    "Name": "Rikor Baseboard",
+    "Probe": [
+        "xyz.openbmc_project.FruDevice({'PRODUCT_PRODUCT_NAME': 'ScalEATX'})"
+   ],
+    "Type": "Board",
+    "xyz.openbmc_project.Inventory.Decorator.Asset": {
+        "Manufacturer": "$PRODUCT_MANUFACTURER",
+        "Model": "$PRODUCT_PRODUCT_NAME",
+        "PartNumber": "$PRODUCT_PART_NUMBER",
+        "SerialNumber": "$PRODUCT_SERIAL_NUMBER"
+    },
+    "xyz.openbmc_project.Inventory.Decorator.AssetTag": {
+        "AssetTag": "$PRODUCT_ASSET_TAG"
+    },
+    "xyz.openbmc_project.Inventory.Item.Board.Motherboard": {
+        "ProductId": 126
+    },
+    "xyz.openbmc_project.Inventory.Item.System": {}
+}
