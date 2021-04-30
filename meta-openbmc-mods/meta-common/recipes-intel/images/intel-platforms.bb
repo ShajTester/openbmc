@@ -16,3 +16,6 @@ fix_shadow_perms() {
     chmod u=rw,g+r ${IMAGE_ROOTFS}${sysconfdir}/shadow
 }
 ROOTFS_POSTPROCESS_COMMAND += "fix_shadow_perms ; "
+
+# IMAGE_FEATURES += "splash"
+

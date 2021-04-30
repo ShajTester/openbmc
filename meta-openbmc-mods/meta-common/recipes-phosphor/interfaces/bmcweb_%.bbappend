@@ -51,3 +51,7 @@ RDEPENDS_${PN}_remove += "jsnbd"
 # Enable Validation unsecure based on IMAGE_FEATURES
 EXTRA_OECMAKE += "${@bb.utils.contains('EXTRA_IMAGE_FEATURES', 'validation-unsecure', '-DBMCWEB_ENABLE_VALIDATION_UNSECURE_FEATURE=ON', '', d)}"
 
+
+# !!!
+# EXTRA_OECMAKE += " -DCMAKE_BUILD_TYPE=Debug"
+
