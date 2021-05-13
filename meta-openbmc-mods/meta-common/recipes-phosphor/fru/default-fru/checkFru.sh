@@ -58,6 +58,9 @@ elif grep -q 'CPU part\s*: 0xc07' /proc/cpuinfo; then
 
 fi
 
+NAME="ScalEATX"
+PRODID="0x7e"
+
 if [ -z "$NAME" ]; then
     NAME="Unknown"
 fi
