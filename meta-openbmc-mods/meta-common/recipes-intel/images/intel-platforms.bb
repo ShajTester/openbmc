@@ -18,4 +18,5 @@ fix_shadow_perms() {
 ROOTFS_POSTPROCESS_COMMAND += "fix_shadow_perms ; "
 
 # IMAGE_FEATURES += "splash"
+IMAGE_INSTALL += "rikfan"
 
