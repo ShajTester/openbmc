@@ -32,6 +32,7 @@ SRC_URI += "file://telemetry/0001-Redfish-TelemetryService-schema-implementation
 "
 
 SRC_URI += "file://0015-Log-entities-desabled.patch"
+SRC_URI += "file://0016-Add-rikfan-to-redfish.patch"
 
 # Temporary fix: Move it to service file
 do_install_append() {

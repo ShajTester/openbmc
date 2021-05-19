@@ -1,0 +1,156 @@
+From fadc7aea4728ed76c95590aab4cfa59db145fb1e Mon Sep 17 00:00:00 2001
+From: ShajTester <andrey-shaj@ya.ru>
+Date: Wed, 19 May 2021 12:48:56 +0300
+Subject: [PATCH] Add rikfan to redfish
+
+---
+ redfish-core/include/redfish.hpp |   4 ++
+ redfish-core/lib/fan.hpp         | 116 +++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 120 insertions(+)
+ create mode 100644 redfish-core/lib/fan.hpp
+
+diff --git a/redfish-core/include/redfish.hpp b/redfish-core/include/redfish.hpp
+index 1c3b5de..ecbf96e 100644
+--- a/redfish-core/include/redfish.hpp
++++ b/redfish-core/include/redfish.hpp
+@@ -22,6 +22,7 @@
+ #include "../lib/cpudimm.hpp"
+ #include "../lib/ethernet.hpp"
+ #include "../lib/event_service.hpp"
++#include "../lib/fan.hpp"
+ #include "../lib/log_services.hpp"
+ #include "../lib/managers.hpp"
+ #include "../lib/message_registries.hpp"
+@@ -222,6 +223,9 @@ class RedfishService
+         nodes.emplace_back(std::make_unique<MetricReportCollection>(app));
+         nodes.emplace_back(std::make_unique<MetricReport>(app));
+ 
++        nodes.emplace_back(std::make_unique<FansSetMode>(app));
++        nodes.emplace_back(std::make_unique<FansGetMode>(app));
++
+         for (const auto& node : nodes)
+         {
+             node->initPrivileges();
+diff --git a/redfish-core/lib/fan.hpp b/redfish-core/lib/fan.hpp
+new file mode 100644
+index 0000000..17f31db
+--- /dev/null
++++ b/redfish-core/lib/fan.hpp
+@@ -0,0 +1,116 @@
++#pragma once
++
++#include "async_resp.hpp"
++#include "dbus_utility.hpp"
++#include "redfish_util.hpp"
++
++#include <variant>
++
++namespace redfish
++{
++
++/**
++ * ChassisResetAction class supports the POST method for the Reset
++ * action.
++ */
++class FansSetMode : public Node
++{
++  public:
++    FansSetMode(CrowApp& app) :
++        Node(app, "/redfish/v1/Rikfan/<str>/", std::string())
++    {
++        entityPrivileges = {
++            {boost::beast::http::verb::post, {{"ConfigureComponents"}}}};
++    }
++
++  private:
++    /**
++     * Function handles POST method request.
++     */
++    void doPost(crow::Response& res, const crow::Request& req,
++                const std::vector<std::string>& params) override
++    {
++        BMCWEB_LOG_DEBUG << "Rikfan set mode. Size " << params.size();
++
++        if (params.size() != 1)
++        {
++            messages::internalError(res);
++            res.end();
++            return;
++        }
++        const std::string& newFanMode = params[0];
++        auto aResp = std::make_shared<AsyncResp>(res);
++        crow::connections::systemBus->async_method_call(
++            [aResp](const boost::system::error_code ec,
++                    const std::variant<bool> asserted) {
++                if (ec)
++                {
++                    BMCWEB_LOG_DEBUG << "DBUS response error " << ec;
++                    messages::internalError(aResp->res);
++                    return;
++                }
++                aResp->res.end();
++            },
++            "xyz.openbmc_project.rikfan",
++            "/xyz/openbmc_project/rikfan",
++            "xyz.openbmc_project.Rikfan", "WriteMode",
++            newFanMode.c_str());
++    }
++};
++
++/**
++ * ChassisResetActionInfo derived class for delivering Chassis
++ * ResetType AllowableValues using ResetInfo schema.
++ */
++class FansGetMode : public Node
++{
++  public:
++    /*
++     * Default Constructor
++     */
++    FansGetMode(CrowApp& app) :
++        Node(app, "/redfish/v1/Rikfan/")
++    {
++        entityPrivileges = {
++            {boost::beast::http::verb::get, {{"Login"}}},
++            {boost::beast::http::verb::head, {{"Login"}}},
++            {boost::beast::http::verb::patch, {{"ConfigureComponents"}}},
++            {boost::beast::http::verb::put, {{"ConfigureComponents"}}},
++            {boost::beast::http::verb::delete_, {{"ConfigureComponents"}}},
++            {boost::beast::http::verb::post, {{"ConfigureComponents"}}}};
++    }
++
++  private:
++    /**
++     * Functions triggers appropriate requests on DBus
++     */
++    void doGet(crow::Response& res, const crow::Request& req,
++               const std::vector<std::string>& params) override
++    {
++        BMCWEB_LOG_DEBUG << "Rikfan GET mode. Size " << params.size();
++
++        res.jsonValue = {{"@odata.type", "#Rikfan.Mode"},
++                         {"@odata.id", "/redfish/v1/Rikfan/Mode"}};
++
++        auto aResp = std::make_shared<AsyncResp>(res);
++        crow::connections::systemBus->async_method_call(
++            [aResp](const boost::system::error_code ec,
++                    int mode) {
++                if (ec)
++                {
++                    BMCWEB_LOG_DEBUG << "DBUS response error " << ec;
++                    messages::internalError(aResp->res);
++                    return;
++                }
++                aResp->res.jsonValue["data"] = std::to_string(mode).c_str();
++                aResp->res.end();
++            },
++            "xyz.openbmc_project.rikfan",
++            "/xyz/openbmc_project/rikfan",
++            "xyz.openbmc_project.Rikfan", "ReadMode");
++
++    }
++};
++
++
++} // namespace redfish
+\ No newline at end of file
