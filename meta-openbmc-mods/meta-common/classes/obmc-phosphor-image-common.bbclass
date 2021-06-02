@@ -1,6 +1,9 @@
 inherit obmc-phosphor-image
 inherit systemd-watchdog
 
+#        rikmail 
+#        postfix 
+
 IMAGE_INSTALL_append = " \
         bmcweb \
         dbus-broker \
