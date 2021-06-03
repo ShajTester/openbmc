@@ -7,4 +7,4 @@ FILESEXTRAPATHS_prepend_intel := "${THISDIR}/${PN}:"
 # SRCREV = "98fed14155ce87fde96072f43f73040d814130b3"
 
 SRC_URI = "git://github.com/tohas1986/phosphor-webui.git;branch=rikmail2"
-SRCREV = "e99fb4d10f554a58132eeb76c8b6c6971cb46c9d"
+SRCREV = "6f68cc3f80087c664922170a4861434e772b2d46"
