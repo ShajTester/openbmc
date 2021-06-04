@@ -5,6 +5,7 @@ inherit systemd-watchdog
 #        postfix 
 
 IMAGE_INSTALL_append = " \
+        postfix \
         bmcweb \
         dbus-broker \
         entity-manager \
