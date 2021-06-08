@@ -29,7 +29,7 @@ python() {
     else:
         # d.setVar('FLASH_SIZE', str(64*1024))
         # DTB_FULL_FIT_IMAGE_OFFSETS = [0x80000, 0x2480000]
-        d.setVar('FLASH_SIZE', str(32*1024))
+        d.setVar('FLASH_SIZE', str(64*1024))
         DTB_FULL_FIT_IMAGE_OFFSETS = [0x80000]
 
     d.setVar('FLASH_RUNTIME_OFFSETS', ' '.join(
