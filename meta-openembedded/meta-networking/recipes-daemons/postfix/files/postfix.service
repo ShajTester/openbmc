@@ -13,4 +13,4 @@ ExecReload=@SBINDIR@/postfix reload
 ExecStop=@SBINDIR@/postfix stop
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=network.target
