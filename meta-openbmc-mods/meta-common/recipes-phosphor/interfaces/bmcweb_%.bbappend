@@ -55,5 +55,5 @@ EXTRA_OECMAKE += "${@bb.utils.contains('EXTRA_IMAGE_FEATURES', 'validation-unsec
 
 
 # !!!
-EXTRA_OECMAKE += " -DCMAKE_BUILD_TYPE=Debug"
+# EXTRA_OECMAKE += " -DCMAKE_BUILD_TYPE=Debug"
 
