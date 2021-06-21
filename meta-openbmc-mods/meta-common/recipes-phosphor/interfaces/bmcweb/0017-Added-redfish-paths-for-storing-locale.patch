@@ -1,0 +1,120 @@
+From 253bf449ff4f0bd432d73696f77eedc607a621ab Mon Sep 17 00:00:00 2001
+From: ShajTester <kolobrod2002@yandex.ru>
+Date: Mon, 21 Jun 2021 12:16:47 +0000
+Subject: [PATCH] Added redfish paths for storing locale
+
+---
+ redfish-core/include/redfish.hpp |  1 +
+ redfish-core/lib/managers.hpp    | 89 ++++++++++++++++++++++++++++++++
+ 2 files changed, 90 insertions(+)
+
+diff --git a/redfish-core/include/redfish.hpp b/redfish-core/include/redfish.hpp
+index ecbf96e..39cda66 100644
+--- a/redfish-core/include/redfish.hpp
++++ b/redfish-core/include/redfish.hpp
+@@ -225,6 +225,7 @@ class RedfishService
+ 
+         nodes.emplace_back(std::make_unique<FansSetMode>(app));
+         nodes.emplace_back(std::make_unique<FansGetMode>(app));
++        nodes.emplace_back(std::make_unique<LocaleMgr>(app));
+ 
+         for (const auto& node : nodes)
+         {
+diff --git a/redfish-core/lib/managers.hpp b/redfish-core/lib/managers.hpp
+index 7832e81..148fc64 100644
+--- a/redfish-core/lib/managers.hpp
++++ b/redfish-core/lib/managers.hpp
+@@ -1967,4 +1967,93 @@ class ManagerCollection : public Node
+         res.end();
+     }
+ };
++
++
++class LocaleMgr : public Node
++{
++  public:
++    /*
++     * Default Constructor
++     */
++    LocaleMgr(CrowApp& app) :
++        Node(app, "/redfish/v1/Managers/bmc/Locales/")
++    {
++        entityPrivileges = {
++            {boost::beast::http::verb::get, {{"Login"}}},
++            {boost::beast::http::verb::head, {{"Login"}}},
++            {boost::beast::http::verb::patch, {{"ConfigureComponents"}}},
++            {boost::beast::http::verb::put, {{"ConfigureComponents"}}},
++            {boost::beast::http::verb::delete_, {{"ConfigureComponents"}}},
++            {boost::beast::http::verb::post, {{"ConfigureComponents"}}}};
++    }
++
++  private:
++    /**
++     * Functions triggers appropriate requests on DBus
++     */
++    void doGet(crow::Response& res, const crow::Request& req,
++               const std::vector<std::string>& params) override
++    {
++        BMCWEB_LOG_DEBUG << "Locales GET " << params.size();
++
++        // res.jsonValue = {{"@odata.type", "#Rikfan.Mode"},
++        //                  {"@odata.id", "/redfish/v1/Rikfan/Mode"}};
++        // res.jsonValue = {{"data", {{"language", "en"}}}};
++
++        auto aResp = std::make_shared<AsyncResp>(res);
++        crow::connections::systemBus->async_method_call(
++            [aResp](const boost::system::error_code ec,
++                    const std::string &lang) {
++                if (ec)
++                {
++                    BMCWEB_LOG_DEBUG << "DBUS response error " << ec;
++                    messages::internalError(aResp->res);
++                    return;
++                }
++                // aResp->res.jsonValue["data"]["language"] = lang.c_str();
++                aResp->res.jsonValue["language"] = lang.c_str();
++                aResp->res.end();
++            },
++            "xyz.openbmc_project.U_Boot.Environment.Manager",
++            "/xyz/openbmc_project/u_boot/environment/mgr",
++            "xyz.openbmc_project.U_Boot.Environment.Manager",
++            "Read", "LANG");
++
++    }
++
++    void doPost(crow::Response& res, const crow::Request& req,
++                const std::vector<std::string>& params) override
++    {
++        BMCWEB_LOG_DEBUG << "Locales POST " << params.size();
++        BMCWEB_LOG_DEBUG << "data: " << req.body;
++
++        std::string localeVal;
++        auto asyncResp = std::make_shared<AsyncResp>(res);
++
++        if (!json_util::readJson(req, asyncResp->res, "language", localeVal))
++        {
++            BMCWEB_LOG_DEBUG << "'json_util::readJson' failed. " << localeVal;
++            localeVal = "en";
++        }
++
++        BMCWEB_LOG_DEBUG << "localeVal is '" << localeVal << "'";
++
++        crow::connections::systemBus->async_method_call(
++            [asyncResp](const boost::system::error_code ec) {
++                if (ec)
++                {
++                    BMCWEB_LOG_DEBUG << "DBUS response error " << ec;
++                    messages::internalError(asyncResp->res);
++                    return;
++                }
++                asyncResp->res.end();
++            },
++            "xyz.openbmc_project.U_Boot.Environment.Manager",
++            "/xyz/openbmc_project/u_boot/environment/mgr",
++            "xyz.openbmc_project.U_Boot.Environment.Manager",
++            "Write", "LANG", localeVal.c_str());
++    }
++
++};
++
+ } // namespace redfish
