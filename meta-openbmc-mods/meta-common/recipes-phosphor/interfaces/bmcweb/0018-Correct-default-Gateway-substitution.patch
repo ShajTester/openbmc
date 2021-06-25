@@ -1,0 +1,29 @@
+From 10be9ff1416e729429cdc8ef5a0de2d765e1879f Mon Sep 17 00:00:00 2001
+From: ShajTester <andrey-shaj@ya.ru>
+Date: Fri, 25 Jun 2021 13:29:56 +0300
+Subject: [PATCH] Correct default Gateway substitution
+
+---
+ redfish-core/lib/ethernet.hpp | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/redfish-core/lib/ethernet.hpp b/redfish-core/lib/ethernet.hpp
+index b1a9f69..050e037 100644
+--- a/redfish-core/lib/ethernet.hpp
++++ b/redfish-core/lib/ethernet.hpp
+@@ -928,11 +928,14 @@ void getEthernetIfaceData(const std::string& ethiface_id,
+             for (IPv4AddressData& ipv4 : ipv4Data)
+             {
+                 if (((ipv4.linktype == LinkType::Global) &&
+-                     (ipv4.gateway == "0.0.0.0")) ||
++                     ((ipv4.gateway == "0.0.0.0") || (ipv4.gateway.length() == 0))) ||
+                     (ipv4.origin == "DHCP"))
+                 {
+                     ipv4.gateway = ethData.default_gateway;
+                 }
++                BMCWEB_LOG_DEBUG << "shaj: linktype: " << ((ipv4.linktype == LinkType::Global) ? "Global" : "Local")
++                        << " ipv4.gateway: " << ipv4.gateway
++                        << " ipv4.origin: " << ipv4.origin;
+             }
+ 
+             extractIPV6Data(ethiface_id, resp, ipv6Data);
