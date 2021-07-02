@@ -1,0 +1,45 @@
+From b9202d70e0f517a4a9237acca1d7a15abdb68174 Mon Sep 17 00:00:00 2001
+From: ShajTester <kolobrod2002@yandex.ru>
+Date: Fri, 2 Jul 2021 09:07:53 +0000
+Subject: [PATCH] Store locale in lang.js
+
+---
+ redfish-core/lib/managers.hpp | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+diff --git a/redfish-core/lib/managers.hpp b/redfish-core/lib/managers.hpp
+index 148fc64..71308a5 100644
+--- a/redfish-core/lib/managers.hpp
++++ b/redfish-core/lib/managers.hpp
+@@ -2021,6 +2021,23 @@ class LocaleMgr : public Node
+ 
+     }
+ 
++
++	void write_lang_config(const std::string &localeVal)
++	{
++		try
++		{
++			std::ofstream ostrm("/etc/lang.js");
++			if(localeVal == "ru")
++				ostrm << "var LANG='ru';" << std::endl;
++			else
++				ostrm << "var LANG='en';" << std::endl;
++		}
++		catch(const std::exception& e)
++		{
++			BMCWEB_LOG_ERROR << "Error writing locale to file";
++		}
++	}
++
+     void doPost(crow::Response& res, const crow::Request& req,
+                 const std::vector<std::string>& params) override
+     {
+@@ -2052,6 +2069,7 @@ class LocaleMgr : public Node
+             "/xyz/openbmc_project/u_boot/environment/mgr",
+             "xyz.openbmc_project.U_Boot.Environment.Manager",
+             "Write", "LANG", localeVal.c_str());
++		write_lang_config(localeVal);
+     }
+ 
+ };
