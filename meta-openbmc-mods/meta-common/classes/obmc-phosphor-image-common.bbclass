@@ -2,6 +2,8 @@ inherit obmc-phosphor-image
 inherit systemd-watchdog
 
 IMAGE_INSTALL_append = " \
+        ntp \
+        rikntp \
         bmcweb \
         dbus-broker \
         entity-manager \
