@@ -9,7 +9,7 @@ LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=86d3f3a95c324c9479bd8986968f4327"
 
 SRC_URI = "git://github.com/askourik/rikntp.git"
-SRCREV = "10526ab8f880fcc6c6bf8e8e798d27ebe75b7bc7"
+SRCREV = "285b83ab1795b8186093055c46d7c73d573ca735"
 
 inherit cmake systemd
 SYSTEMD_SERVICE_${PN} = "xyz.openbmc_project.rikntp.service"
