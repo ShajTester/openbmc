@@ -233,7 +233,6 @@ class PCHSync
             std::cout << "Update BMC time Fail" << std::endl;
             syncIntervalMS = syncIntervalFastMS;
         }
-
         syncTimer->expires_after(std::chrono::milliseconds(syncIntervalMS));
         syncTimer->async_wait(
             [this](const boost::system::error_code& ec) { startSyncTimer(); });
