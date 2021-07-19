@@ -36,6 +36,7 @@ SRC_URI += "file://0016-Add-rikfan-to-redfish.patch"
 SRC_URI += "file://0017-Added-redfish-paths-for-storing-locale.patch"
 SRC_URI += "file://0018-Correct-default-Gateway-substitution.patch"
 SRC_URI += "file://0019-Store-locale-in-lang.js.patch"
+SRC_URI += "file://0020-Store-gateway-v4.patch"
 
 # Temporary fix: Move it to service file
 do_install_append() {
@@ -57,5 +58,5 @@ EXTRA_OECMAKE += "${@bb.utils.contains('EXTRA_IMAGE_FEATURES', 'validation-unsec
 
 
 # !!!
-# EXTRA_OECMAKE += " -DCMAKE_BUILD_TYPE=Debug"
+EXTRA_OECMAKE += " -DCMAKE_BUILD_TYPE=Debug"
 

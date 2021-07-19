@@ -1,0 +1,58 @@
+From b171b58b0cfe5166c8ee2dc586954a34d49ec811 Mon Sep 17 00:00:00 2001
+From: ShajTester <kolobrod2002@yandex.ru>
+Date: Mon, 19 Jul 2021 10:26:20 +0000
+Subject: [PATCH] Store gateway v4
+
+Save the v4 gateway as the default gateway for each IPv4.
+---
+ redfish-core/lib/ethernet.hpp | 24 +++++++++++++++++++-----
+ 1 file changed, 19 insertions(+), 5 deletions(-)
+
+diff --git a/redfish-core/lib/ethernet.hpp b/redfish-core/lib/ethernet.hpp
+index 050e037..f4001b6 100644
+--- a/redfish-core/lib/ethernet.hpp
++++ b/redfish-core/lib/ethernet.hpp
+@@ -736,17 +736,29 @@ inline void createIPv4(const std::string& ifaceId, unsigned int ipIdx,
+                        std::shared_ptr<AsyncResp> asyncResp)
+ {
+     crow::connections::systemBus->async_method_call(
+-        [asyncResp](const boost::system::error_code ec) {
++        [asyncResp, ifaceId, address, prefixLength, gateway](const boost::system::error_code ec) {
+             if (ec)
+             {
+                 messages::internalError(asyncResp->res);
+             }
++            crow::connections::systemBus->async_method_call(
++                [asyncResp](const boost::system::error_code ec) {
++                    if (ec)
++                    {
++                        messages::internalError(asyncResp->res);
++                    }
++                },
++                "xyz.openbmc_project.Network",
++                "/xyz/openbmc_project/network/" + ifaceId,
++                "xyz.openbmc_project.Network.IP.Create", "IP",
++                "xyz.openbmc_project.Network.IP.Protocol.IPv4", address, prefixLength,
++                gateway);
+         },
+         "xyz.openbmc_project.Network",
+-        "/xyz/openbmc_project/network/" + ifaceId,
+-        "xyz.openbmc_project.Network.IP.Create", "IP",
+-        "xyz.openbmc_project.Network.IP.Protocol.IPv4", address, prefixLength,
+-        gateway);
++        "/xyz/openbmc_project/network/config",
++        "org.freedesktop.DBus.Properties", "Set",
++        "xyz.openbmc_project.Network.SystemConfiguration",
++        "DefaultGateway", std::variant<std::string>{gateway});
+ }
+ 
+ /**
+@@ -768,6 +780,8 @@ inline void deleteAndCreateIPv4(const std::string& ifaceId,
+                                 const std::string& address,
+                                 std::shared_ptr<AsyncResp> asyncResp)
+ {
++    BMCWEB_LOG_DEBUG << "shaj: deleteAndCreateIPv4 Gateway: " << gateway;
++
+     crow::connections::systemBus->async_method_call(
+         [asyncResp, ifaceId, address, prefixLength,
+          gateway](const boost::system::error_code ec) {
